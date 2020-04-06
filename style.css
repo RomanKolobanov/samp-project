@@ -1,0 +1,33 @@
+body {
+	margin: 0;
+	background: #ecfbfc;
+}
+
+.player-control {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	bottom: 15px;
+	right: 15px;
+	cursor: pointer;
+}
+
+#preloader {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	background: #b52b65;
+	z-index: 9999;
+}
+
+.preloader-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.preloader-item {
+	width: 128px;
