@@ -2,6 +2,9 @@
 
 let audio = $("#audio");
 
+function animationWithMusic() {
+
+};
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	audio[0].pause();
@@ -13,14 +16,16 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 	$(".player-control").attr('src', 'content/play.png');
 	$(".player-control").click(function() {  
     	if (audio[0].paused == false) {
-        	audio.animate({volume: 0}, 2000, 'swing', function() {
+        	audio.animate({volume: 0}, 670, 'swing', function() {
             	audio[0].pause();   
         	});
         		$(this).attr('src', 'content/play.png');
+            $("#logo").removeClass('with-animation');
      	} else {
          	audio[0].play();  
-         	audio.animate({volume: 0.5}, 1000);
-        		$(this).attr('src', 'content/pause.png');
+         	audio.animate({volume: 0.5}, 670);
+        	$(this).attr('src', 'content/pause.png');
+          $("#logo").addClass('with-animation');
      	}
 	});
 
@@ -30,12 +35,9 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 // Скрипт предзагрузчика
 
 
-function preloaderOut() {
-	$("#preloader").fadeOut('1000');
-};
-
-
-setTimeout(preloaderOut, 3000);
+$(window).on('load', function () {
+      $("#preloader").delay(500).fadeOut('1000');
+});
 
 
 /*
@@ -58,3 +60,20 @@ function preloaderAnimation(selector, interval) {
 }
 
 preloaderAnimation('.preloader-content > .preloader-item', 250);
+
+// Скрипт движения блоков
+
+(function(){
+  var elelLim = document.getElementById('hero-img'),
+      startX = -100,
+      startY = -100,
+      w = document.documentElement.offsetWidth,
+      h = document.documentElement.offsetHeight;
+
+  elelLim.addEventListener('mousemove', function(evt){
+    var posX = Math.round(evt.clientX / w * startX)
+    var posY = Math.round(evt.clientY / h * startY)
+    elelLim.style.backgroundPosition = posX + 'px ' + posY + 'px'
+  })
+})()
+
