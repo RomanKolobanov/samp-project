@@ -65,8 +65,8 @@ preloaderAnimation('.preloader-content > .preloader-item', 250);
 
 (function(){
   var elelLim = document.getElementById('hero-img'),
-      startX = 50,
-      startY = 50,
+      startX = 100,
+      startY = 100,
       w = document.documentElement.offsetWidth,
       h = document.documentElement.offsetHeight;
 
