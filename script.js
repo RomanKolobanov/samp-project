@@ -25,7 +25,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
          	audio[0].play();  
          	audio.animate({volume: 0.5}, 670);
         	$(this).attr('src', 'content/pause.png');
-          $("#logo").addClass('with-animation');
+          $("#logo").delay(8000).addClass('with-animation');
      	}
 	});
 
@@ -65,8 +65,8 @@ preloaderAnimation('.preloader-content > .preloader-item', 250);
 
 (function(){
   var elelLim = document.getElementById('hero-img'),
-      startX = -100,
-      startY = -100,
+      startX = 50,
+      startY = 50,
       w = document.documentElement.offsetWidth,
       h = document.documentElement.offsetHeight;
 
@@ -75,5 +75,5 @@ preloaderAnimation('.preloader-content > .preloader-item', 250);
     var posY = Math.round(evt.clientY / h * startY)
     elelLim.style.backgroundPosition = posX + 'px ' + posY + 'px'
   })
-})()
+})();
 

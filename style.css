@@ -5,7 +5,7 @@ body {
 
 .with-animation {
 	animation: wow .67s infinite;
-	animation-delay: 8s;
+	animation-delay: 7.6s;
 }
 
 @keyframes wow {
@@ -13,7 +13,7 @@ body {
 		transform: scale(1);
 	}
 	50% {
-		transform: scale(1.05) rotate(10deg);
+		transform: scale(1.05) rotate(5deg);
 	}
 }
 
@@ -76,4 +76,12 @@ body {
 
 	width: 50px;
 	height: 50px;
+}
+
+#hero-img {
+	background: url('heart.png');
+	background-size: 80%;
+	background-repeat: no-repeat;
+	min-width: 512px;
+	height: 512px;
 }
